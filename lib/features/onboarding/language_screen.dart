@@ -29,12 +29,12 @@ class LanguageScreen extends StatelessWidget {
             children: [
               const Icon(Icons.medication_liquid, size: 100, color: Colors.green),
               const SizedBox(height: 20),
-              Text(
+              const Text(
                 AppStrings.welcomeBn,
                 style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
-              Text(
+              const Text(
                 AppStrings.welcomeEn,
                 style: TextStyle(fontSize: 20, color: Colors.grey),
                 textAlign: TextAlign.center,
@@ -73,7 +73,7 @@ class LanguageButton extends StatelessWidget {
   final Color color;
   final VoidCallback onTap;
 
-  const LanguageButton({
+  const LanguageButton({super.key, 
     required this.title,
     required this.subtitle,
     required this.color,
