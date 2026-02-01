@@ -1,0 +1,28 @@
+name: ki_oushudh
+description: "AI Pharmacist for the elderly in Bangladesh."
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # OCR for reading medicine names
+  google_mlkit_text_recognition: ^0.13.0
+  # Camera access
+  camera: ^0.11.0
+  # Gemini AI Integration
+  google_generative_ai: ^0.4.0
+  # Text to Speech for Bangla output
+  flutter_tts: ^4.0.0
+  # State & Local Storage
+  shared_preferences: ^2.2.0
+  provider: ^6.1.0
+  # Security for API Keys
+  flutter_dotenv: ^5.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0

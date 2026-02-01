@@ -1,0 +1,12 @@
+# Secret Keys
+.env
+
+# Flutter/Dart build files
+build/
+.dart_tool/
+.packages
+pubspec.lock
+
+# Android/iOS specific ignores
+.gradle/
+*.podspec
