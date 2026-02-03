@@ -21,34 +21,37 @@ class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("ওষুধের তথ্য (Info)")),
-      body: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.volume_up, size: 80, color: Colors.green),
-            const SizedBox(height: 30),
-            Text(
-              widget.info,
-              style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
+      appBar: AppBar(title: const Text("ওষুধের তথ্য")),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          // Prevents the overflow error
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(Icons.volume_up, size: 80, color: Colors.green),
+                const SizedBox(height: 20),
+                Text(
+                  widget.info,
+                  style: const TextStyle(
+                      fontSize: 24, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 40),
+                ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(double.infinity, 70),
+                    backgroundColor: Colors.orange,
+                  ),
+                  onPressed: () => Navigator.pop(context),
+                  icon: const Icon(Icons.refresh, color: Colors.white),
+                  label: const Text("আবার স্ক্যান করুন",
+                      style: TextStyle(fontSize: 20, color: Colors.white)),
+                ),
+              ],
             ),
-            const SizedBox(height: 50),
-            SizedBox(
-              width: double.infinity,
-              height: 80,
-              child: ElevatedButton.icon(
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.orange, foregroundColor: Colors.white),
-                onPressed: () {
-                  _voice.stop();
-                  Navigator.pop(context);
-                },
-                icon: const Icon(Icons.refresh, size: 30),
-                label: const Text("আবার স্ক্যান করুন", style: TextStyle(fontSize: 22)),
-              ),
-            )
-          ],
+          ),
         ),
       ),
     );
